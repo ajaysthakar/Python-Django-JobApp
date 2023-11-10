@@ -1,0 +1,42 @@
+{% extends "Base.html" %}
+{% block title %}Subscriber page{% endblock title %}
+{% block content %}
+<section>
+  <div class="container">
+      <form class="email-form" method='POST'>
+        {% csrf_token %}
+        <p>
+          {{ form.first_name.errors}}
+          <label for="id_first_name">Enter First Name:</label>
+          <!--
+            <input type="text" name="first_name" maxlength="100" required id="id_first_name">
+          -->
+          {{ form.first_name}}
+        </p>
+        <p>
+          {{ form.last_name.errors}}
+          <label for="id_last_name">Enter Last Name:</label>
+          {% comment %} <input type="text" name="last_name" maxlength="100" required id="id_last_name"> {% endcomment %}
+          {{ form.last_name}}
+        </p>
+        <p>
+          {{ form.email.errors}}
+          <label for="id_email">Enter Email:</label>
+          {% comment %} <input type="email" name="email" maxlength="100" required id="id_email">  {% endcomment %}
+          {{form.email}}
+        </p>
+        <p>
+          <label for="id_option">Option:</label>
+          {% comment %} <select name="option" id="id_option">
+        <option value="W">Weekly</option>
+        <option value="M" selected>Monthly</option>
+      </select> {% endcomment %}
+      {{form.notif}}
+        </p>
+      <button class="email-submit">Submit</button>
+</div>
+  </div>
+</section>
+
+{% endblock content %}
+ 

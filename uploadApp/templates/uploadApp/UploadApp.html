@@ -1,0 +1,17 @@
+<html>
+    <head></head>
+    <body>
+        <form method='post' enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p}}   
+        <input type='submit' value="upload">
+        </form>
+        {% if saved_obj %}
+        <h2> upload succesful: {{ saved_obj.image.url }}</h2>
+        <h3> Image description: {{ saved_obj.image.url }}</h3>
+        <img src="{{ saved_obj.image.url }}" alt="uploaded image">
+        {% endif %}
+    
+
+    </body
+</html>
